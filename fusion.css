@@ -1,0 +1,470 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Poppins", serif;
+}
+
+.container {
+  width: 90%;
+  margin-inline: auto;
+}
+
+header {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../../FILE/yogat.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* navi */
+.navigation {
+  position: fixed; /* Tetap di posisi atas saat di-scroll */
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 10px 0;
+  background-color: transparent; /* Awalnya transparan */
+  transition: background-color 0.3s; /* Transisi warna yang halus */
+}
+
+.navigation.scrolled {
+  background-color: antiquewhite; /* Warna saat di-scroll */
+}
+
+.navigation a {
+  color: black;
+  text-decoration: none;
+  padding: 14px 16px;
+  transition: color 0.3s;
+}
+
+/* .navigation a:hover {
+  color: black;
+}
+
+.navigation.bo.scrolled ul i a {
+  color: black;
+} */
+
+/* endnav */
+.navigation .box-navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation .box-navigation .box:nth-child(1) h1 {
+  font-size: 36px;
+  color: whitesmoke;
+}
+
+.navigation .box-navigation .box:nth-child(2) ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navigation .box-navigation .box:nth-child(2) ul li {
+  list-style-type: none;
+  margin-left: 40px;
+}
+
+.navigation .box-navigation .box:nth-child(2) ul li a {
+  text-decoration: none;
+  color: whitesmoke;
+  transition: all 0.3s ease;
+}
+
+.navigation .box-navigation .box:nth-child(2) ul li a:hover {
+  color: greenyellow;
+}
+
+.navigation .box-navigation .box:nth-child(3) {
+  display: none;
+}
+
+.navigation .box-navigation .box:nth-child(2) ul li i {
+  display: none;
+}
+
+@media screen and (max-width: 990px) {
+  .navigation .box-navigation .box:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    background-color: whitesmoke;
+    width: 250px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  .navigation .box-navigation .menu-navigation .menu-active {
+    opacity: 1;
+    top: 100px;
+  }
+  .navigation .box-navigation .box:nth-child(2) ul {
+    flex-direction: column;
+  }
+
+  .navigation .box-navigation .box:nth-child(2) ul li a {
+    color: black;
+  }
+
+  .navigation .box-navigation .box:nth-child(2) ul li {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+  }
+
+  .navigation .box-navigation .box:nth-child(2) ul li i {
+    margin-inline: 10px;
+    font-size: 24px;
+  }
+
+  .navigation .box-navigation .box:nth-child(3) {
+    display: flex;
+    align-items: center;
+  }
+
+  .navigation .box-navigation .box:nth-child(3) i {
+    font-size: 28px;
+  }
+
+  header .hero h1 {
+    font-size: 34px;
+  }
+  .information .box-information {
+    flex-direction: column-reverse;
+  }
+
+  .information .box-information .box:nth-child(1) {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .information .box-information .box:nth-child(2) img {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header .hero h1 {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  header .hero h1 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .information .box-information .box:nth-child(2) img {
+    width: 500px;
+  }
+
+  .information .box-information .box:nth-child(1) h1 {
+    font-size: 28px;
+  }
+
+  .information .box-information .box:nth-child(1) p {
+    font-size: 12px;
+  }
+
+  /* .information .box-information .box:nth-child(2) img {
+    width: 250px;
+  } */
+}
+@media screen and (max-width: 575px) {
+  .information .box-information .box:nth-child(1) h1 {
+    font-size: 34px;
+  }
+
+  .information .box-information .box:nth-child(1) p {
+    font-size: 14px;
+  }
+
+  .information .box-information .box:nth-child(2) img {
+    width: 300px;
+  }
+}
+
+/* hero styleS */
+header .hero {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
+header .hero h1 {
+  color: rgba(245, 245, 245, 0.5);
+  font-size: 48px;
+  text-align: center;
+}
+
+/* information style */
+.information {
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  align-items: center;
+  background-color: antiquewhite;
+}
+
+.information .box-information {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.information .box-information .box:nth-child(2) img {
+  border-radius: 10px;
+  width: 600px;
+}
+
+.information .box-information .box:nth-child(1) h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+.information .box-information .box:nth-child(1) p {
+  line-height: 2;
+}
+
+.information .box-information .box:nth-child(1) {
+  padding-right: 30px;
+}
+
+/* divisi */
+#divisi {
+  /* margin-top: 120px; */
+  overflow: hidden;
+}
+#divisi .top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em;
+}
+#divisi .top .right {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#divisi .top .right button {
+  width: 48px;
+  aspect-ratio: 1 / 1;
+  border-radius: 100%;
+  border: 2px solid #2552c7;
+  background-color: transparent;
+  transition: 0.3s;
+  cursor: pointer;
+}
+#divisi .top .right button:hover {
+  background-color: #2552c7;
+}
+#divisi .top .right button:hover i {
+  color: white;
+}
+#divisi .top .right button i {
+  color: #2552c7;
+}
+#divisi .top .right button.aktif {
+  border: 2px solid transparent;
+  background-color: #2552c7;
+}
+#divisi .top .right button.aktif i {
+  color: white;
+}
+#divisi .top .right .bLeft,
+#karya .top .right .bLeftt {
+  margin-right: 12px;
+}
+.coverDivisi {
+  width: 100%;
+
+  overflow: hidden;
+}
+.boxDivisi {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 120px;
+  overflow-x: auto;
+  width: 100%;
+  border-left: 80px solid var(--color2--);
+  border-right: 80px solid var(--color2--);
+  gap: 24px;
+}
+.boxDivisi::-webkit-scrollbar {
+  width: 0;
+}
+.boxDivisi .card {
+  min-width: calc(calc(100vw - 80px) / 3 - 48px);
+  /* margin-right: 24px; */
+  background-color: red;
+  aspect-ratio: 3 / 4.5;
+  border-radius: 12px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.boxDivisi .card::before {
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 70.95%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  border-radius: 12px;
+  top: 0;
+  left: 0;
+}
+.boxDivisi .card:last-child {
+  margin-right: 0;
+}
+.boxDivisi .card .titleCard {
+  font-family: recolenta;
+  font-size: 36px;
+  color: white;
+  margin-bottom: 6px;
+  z-index: 2;
+}
+.boxDivisi .card .deskCard {
+  font-size: 16px;
+  font-family: poppins;
+  color: whitesmoke;
+  margin-bottom: 12px;
+  z-index: 2;
+  text-align: center;
+}
+.boxDivisi .card a {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+.boxDivisi .card a button {
+  padding: 8px 0;
+  width: 100%;
+  border-radius: 1000px;
+  background-color: #2552c7;
+  color: white;
+  font-family: poppins;
+  font-size: 16px;
+  z-index: 2;
+  cursor: pointer;
+  transition: 0.3s;
+  /* font-weight: bold; */
+}
+.boxDivisi .card a button:hover {
+  background-color: #12399a;
+}
+.program {
+  background-image: url(FILE/posters\ 1.jpg);
+}
+.desain {
+  background-image: url(FILE/posters\ 2.jpg);
+}
+.office {
+  background-image: url(FILE/posters\ 3.jpg);
+}
+.mulmed {
+  background-image: url(FILE/posters\ 4.jpg);
+}
+
+.content {
+  width: 100%;
+  /* max-width: 1200px; */
+  padding-top: 24px;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+}
+
+h1,
+h2 {
+  color: #35424a;
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+  gap: 68px; /* Jarak antara gambar */
+}
+
+.image-link {
+  text-align: center;
+}
+
+.image-link img {
+  width: 100%; /* Mengatur lebar gambar 100% dari kontainer */
+  height: 200px; /* Mengatur tinggi gambar */
+  object-fit: cover; /* Memastikan gambar mengisi area tanpa merusak rasio aspek */
+  border-radius: 8px;
+  transition: transform 0.2s;
+  border: 1px solid greenyellow;
+}
+
+.image-link img:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background: #35424a;
+  color: #ffffff;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content h2 {
+  margin-bottom: 10px;
+}
+
+.social-media {
+  margin: 10px 0;
+}
+
+.social-media a {
+  color: #ffffff;
+  margin: 0 10px;
+  font-size: 24px; /* Ukuran ikon */
+  transition: color 0.3s;
+}
+
+.social-media a:hover {
+  color: #f4f4f4; /* Warna saat hover */
+}
+
+footer p {
+  margin: 5px 0;
+}
